@@ -1,0 +1,50 @@
+@import '../common/layout';
+@import '../common/variables';
+
+.header-container {
+  width: 100%;
+  @include flex-column(flex-start, center);
+}
+
+.main-header {
+  width: 100%;
+  @include flex-row(space-between, center);
+  max-width: 1600px;
+
+  .logo {
+    width: 180px;
+  }
+}
+
+.categories {
+  @include flex-row(flex-start, center);
+
+  font-size: 20px;
+  gap: 40px;
+
+  .category {
+    cursor: pointer;
+    padding: 35px 0;
+    width: 150px;
+    @include flex-row(center, center);
+
+    &.focus {
+      border-bottom: 3px solid rgb(180, 58, 58);
+    }
+  }
+}
+
+.right-header {
+  @include flex-row(flex-start, center);
+  gap: 25px;
+
+  .search,
+  .burger {
+    @include flex-row(center, center);
+    cursor: pointer;
+
+    img {
+      width: 28px;
+    }
+  }
+}
