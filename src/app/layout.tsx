@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Header from './components/common/Header';
 import './styles/common/globals.scss';
+import style from './styles/common/layout.module.scss';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Header />
-        {children}
+        <main className={style['main']}>{children}</main>
       </body>
     </html>
   );

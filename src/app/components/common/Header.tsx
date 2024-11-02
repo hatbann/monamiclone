@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import style from '../../styles/common/header.module.scss';
 import HeaderCategory from './HeaderCategory';
+import HeaderSubCategory from './HeaderSubCategory';
 
 export type CategoryType = {
   name: string;
@@ -45,53 +46,90 @@ const HeaderCategories: CategoryType[] = [
 
 const Header = () => {
   const [isBurgerOpen, setIsBurgerOpen] = useState(false);
-  const [isHeaderOpen, setIsHeaderOpen] = useState(false);
+  const [isHeaderOpen, setIsHeaderOpen] = useState(true);
   const [focusName, setFocusName] = useState('');
+  const [subFucusName, setSubFocusName] = useState('');
 
   return (
     <div className={style['header-container']}>
-      <div className={style['main-header']}>
-        <img src="/images/logo.png" alt="logo" className={style['logo']} />
-        <div className={style['categories']}>
-          {HeaderCategories.map((category, idx) => {
-            return (
-              <div
-                key={category.name + idx}
-                className={
-                  category.name === focusName
-                    ? `${style['category']} ${style['focus']}`
-                    : style['category']
-                }
-                onMouseOver={() => {
-                  setIsHeaderOpen(true);
-                  setFocusName(category.name);
-                }}
-                onMouseLeave={() => {
+      <div className={style['top-header']}>
+        <div className={style['main-header']}>
+          <img src="/images/logo.png" alt="logo" className={style['logo']} />
+          <div className={style['categories']}>
+            {HeaderCategories.map((category, idx) => {
+              return (
+                <div
+                  key={category.name + idx}
+                  className={
+                    category.name === focusName
+                      ? `${style['category']} ${style['focus']}`
+                      : style['category']
+                  }
+                  onMouseOver={() => {
+                    setIsHeaderOpen(true);
+                    setFocusName(category.name);
+                  }}
+                  /*                 onMouseLeave={() => {
                   setIsHeaderOpen(false);
                   setFocusName('');
-                }}
-              >
-                <HeaderCategory
-                  category={category}
-                  onClick={() => {}}
-                  onHover={() => {}}
-                />
-              </div>
-            );
-          })}
-        </div>
-        <div className={style['right-header']}>
-          <div className={style['search']}>
-            <img src="/images/search.png" alt="search" />
+                }} */
+                >
+                  <HeaderCategory
+                    category={category}
+                    onClick={() => {}}
+                    onHover={() => {}}
+                  />
+                </div>
+              );
+            })}
           </div>
-          <div className={style['burger']}>
-            <img src="/images/burger.png" alt="burger" />
+          <div className={style['right-header']}>
+            <div className={style['search']}>
+              <img src="/images/search.png" alt="search" />
+            </div>
+            <div className={style['burger']}>
+              <img src="/images/burger.png" alt="burger" />
+            </div>
           </div>
         </div>
       </div>
       {(isBurgerOpen || isHeaderOpen) && (
-        <div className={style['bottom-header']}>
-          
+        <div
+          className={style['bottom-header']}
+          onMouseLeave={() => {
+            if (isHeaderOpen) {
+              setIsHeaderOpen(false);
+              setFocusName('');
+            }
+          }}
+        >
+          <div style={{ width: '180px' }}></div>
+          <div className={style['subcategories']}>
+            {HeaderCategories.map((category, idx) => {
+              return (
+                <div
+                  className={style['sub-category']}
+                  key={idx + category.name}
+                >
+                  {category.subs.map((sub, idx) => (
+                    <div
+                      className={style['sub']}
+                      key={idx + category.name}
+                      onMouseOver={() => {
+                        setSubFocusName(sub);
+                      }}
+                    >
+                      <HeaderSubCategory
+                        name={sub}
+                        isFocused={sub === subFucusName}
+                      />
+                    </div>
+                  ))}
+                </div>
+              );
+            })}
+          </div>
+          <div style={{ width: '81px' }}></div>
         </div>
       )}
     </div>

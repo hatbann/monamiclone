@@ -1,0 +1,11 @@
+@import '../common/layout';
+@import '../common/variables';
+
+.name {
+  font-size: 15px;
+  color: rgb(20, 20, 20);
+
+  &.focused {
+    color: rgb(180, 58, 58);
+  }
+}

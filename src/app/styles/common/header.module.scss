@@ -4,6 +4,13 @@
 .header-container {
   width: 100%;
   @include flex-column(flex-start, center);
+  position: fixed;
+}
+
+.top-header {
+  width: 100%;
+  @include flex-row(center, center);
+  background-color: white;
 }
 
 .main-header {
@@ -21,6 +28,7 @@
 
   font-size: 20px;
   gap: 40px;
+  width: 1100px;
 
   .category {
     cursor: pointer;
@@ -45,6 +53,34 @@
 
     img {
       width: 28px;
+    }
+  }
+}
+
+.bottom-header {
+  @include flex-row(center, flex-start);
+  width: 100%;
+  /*   max-width: 1600px; */
+  padding: 20px 0 0;
+  height: 350px;
+  background-color: rgba(255, 255, 255, 0.76);
+}
+
+.subcategories {
+  @include flex-row(flex-start, center);
+  gap: 40px;
+  height: 100%;
+
+  .sub-category {
+    width: 150px;
+    @include flex-column(flex-start, center);
+    height: 100%;
+
+    .sub {
+      width: 100%;
+      @include flex-column(center, center);
+      padding: 10px 0;
+      cursor: pointer;
     }
   }
 }
