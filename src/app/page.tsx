@@ -22,7 +22,27 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <section></section>
+      <section className={style['num2']}>
+        <div className={style['top']}>
+          <div className={style['comment-box']}>
+            <div className={style['comment']}>
+              <h3>
+                NEW
+                <br />
+                ARRIVALS
+              </h3>
+              <p>가장 먼저 만나는 설레는 기다림</p>
+            </div>
+            <div className={`${style['box']} ${style['first']}`}></div>
+          </div>
+          <div className={`${style['box']} ${style['sec']}`}></div>
+        </div>
+        <div className={style['bottom']}>
+          <div className={`${style['box']} ${style['third']}`}></div>
+          <div className={`${style['box']} ${style['fourth']}`}></div>
+          <div className={`${style['box']} ${style['fifth']}`}></div>
+        </div>
+      </section>
       <footer></footer>
     </div>
   );
