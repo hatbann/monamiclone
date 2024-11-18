@@ -1,5 +1,5 @@
-@import '../common/layout';
-@import '../common/variables';
+@import '../../common/layout';
+@import '../../common/variables';
 
 .container {
   width: 100%;
@@ -55,10 +55,6 @@
       width: 30%;
       height: 100%;
       @include flex-column(space-between, flex-start);
-      .first {
-        width: 100%;
-        height: 300px;
-      }
 
       .comment {
         @include flex-column(flex-start, flex-start);
@@ -74,31 +70,11 @@
         }
       }
     }
-
-    .sec {
-      width: 70%;
-      height: 100%;
-    }
   }
 
   .bottom {
     width: 100%;
     @include flex-row(flex-start, flex-start);
     gap: 20px;
-
-    .third {
-      width: 30%;
-      height: 300px;
-    }
-
-    .fourth {
-      width: 45%;
-      height: 400px;
-    }
-
-    .fifth {
-      width: 25%;
-      height: 300px;
-    }
   }
 }

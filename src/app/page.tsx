@@ -1,4 +1,7 @@
-import style from '../app/styles/pages/main.module.scss';
+'use client';
+
+import style from '../app/styles/pages/main/main.module.scss';
+import Box from './components/pages/Box';
 
 export default function Home() {
   return (
@@ -33,14 +36,44 @@ export default function Home() {
               </h3>
               <p>가장 먼저 만나는 설레는 기다림</p>
             </div>
-            <div className={`${style['box']} ${style['first']}`}></div>
+            <Box
+              mainText="FX ZETA C3"
+              subText="PEN"
+              onClick={() => {}}
+              order="first"
+              img="https://dfrkkcv2hg1jc.cloudfront.net/data/main/file1_1699945409grwui60w6u.jpg"
+            />
           </div>
-          <div className={`${style['box']} ${style['sec']}`}></div>
+          <Box
+            mainText="지퀀스"
+            subText="NOTE"
+            onClick={() => {}}
+            order="sec"
+            img="https://dfrkkcv2hg1jc.cloudfront.net/data/main/file1_169994521784nzg4whv7.jpg"
+          />
         </div>
         <div className={style['bottom']}>
-          <div className={`${style['box']} ${style['third']}`}></div>
-          <div className={`${style['box']} ${style['fourth']}`}></div>
-          <div className={`${style['box']} ${style['fifth']}`}></div>
+          <Box
+            mainText="프러스펜3000프라임"
+            subText="PREMIUM PEN"
+            onClick={() => {}}
+            order="third"
+            img="https://dfrkkcv2hg1jc.cloudfront.net/data/main/file1_1715318030bhfwnjum09.jpg"
+          />
+          <Box
+            mainText="153 아이디 만년필"
+            subText="FOUNTAIN PEN"
+            onClick={() => {}}
+            order="fourth"
+            img="https://dfrkkcv2hg1jc.cloudfront.net/data/main/file1_1681087061mb8i5l6zdx.jpg"
+          />
+          <Box
+            mainText="프러스펜 3000"
+            subText="WATER-BASED MARKER"
+            onClick={() => {}}
+            order="fifth"
+            img="https://dfrkkcv2hg1jc.cloudfront.net/data/main/file1_1715319042z7nuju2l3p.jpg"
+          />
         </div>
       </section>
       <footer></footer>

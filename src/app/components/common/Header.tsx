@@ -100,6 +100,7 @@ const Header = () => {
             if (isHeaderOpen) {
               setIsHeaderOpen(false);
               setFocusName('');
+              setSubFocusName('');
             }
           }}
         >
