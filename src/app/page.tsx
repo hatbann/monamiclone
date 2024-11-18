@@ -1,9 +1,16 @@
 'use client';
 
+import { useState } from 'react';
 import style from '../app/styles/pages/main/main.module.scss';
 import Box from './components/pages/Box';
+import Button from './components/pages/Button';
+
+export type ProductButton = 'premium' | 'pen' | 'marker' | 'note';
 
 export default function Home() {
+  const [clickedButton, setIsClickedButton] =
+    useState<ProductButton>('premium');
+
   return (
     <div className={style['container']}>
       <section className={style['num1']}>
@@ -34,6 +41,7 @@ export default function Home() {
                 <br />
                 ARRIVALS
               </h3>
+              <img src="/images/line.png" alt="line" />
               <p>가장 먼저 만나는 설레는 기다림</p>
             </div>
             <Box
@@ -75,6 +83,40 @@ export default function Home() {
             img="https://dfrkkcv2hg1jc.cloudfront.net/data/main/file1_1715319042z7nuju2l3p.jpg"
           />
         </div>
+      </section>
+      <section className={style['num3']}>
+        <div className={style['title']}>
+          <h3>BEST PRODUCT</h3>
+          <img src="/images/line.png" alt="line" />
+          <p>언제 어디서나 생활속에 함께하는 모나미</p>
+        </div>
+        <div className={style['categories']}>
+          <Button
+            text="프리미엄 펜"
+            isClicked={clickedButton === 'premium'}
+            setIsClicked={setIsClickedButton}
+            type="premium"
+          />
+          <Button
+            text="펜·펜슬"
+            isClicked={clickedButton === 'pen'}
+            setIsClicked={setIsClickedButton}
+            type="pen"
+          />
+          <Button
+            text="마카·컬러링"
+            isClicked={clickedButton === 'marker'}
+            setIsClicked={setIsClickedButton}
+            type="marker"
+          />
+          <Button
+            text="노트·사무용품"
+            isClicked={clickedButton === 'note'}
+            setIsClicked={setIsClickedButton}
+            type="note"
+          />
+        </div>
+        <div className={style['items']}></div>
       </section>
       <footer></footer>
     </div>
