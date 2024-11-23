@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import style from '../../styles/pages/main/box.module.scss';
+import style from '../../../styles/pages/main/box.module.scss';
 
 type BoxOrder = 'first' | 'sec' | 'third' | 'fourth' | 'fifth';
 

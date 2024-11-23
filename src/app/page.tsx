@@ -2,8 +2,9 @@
 
 import { useState } from 'react';
 import style from '../app/styles/pages/main/main.module.scss';
-import Box from './components/pages/Box';
-import Button from './components/pages/Button';
+import Box from './components/pages/main/Box';
+import Button from './components/pages/main/Button';
+import MultipleSlider from './components/pages/main/Slider';
 
 export type ProductButton = 'premium' | 'pen' | 'marker' | 'note';
 
@@ -116,7 +117,9 @@ export default function Home() {
             type="note"
           />
         </div>
-        <div className={style['items']}></div>
+        <div className={style['items']}>
+          <MultipleSlider />
+        </div>
       </section>
       <footer></footer>
     </div>

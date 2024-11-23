@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import style from '../../styles/pages/main/button.module.scss';
+import style from '../../../styles/pages/main/button.module.scss';
 import { ProductButton } from '@/app/page';
 
 type Props = {

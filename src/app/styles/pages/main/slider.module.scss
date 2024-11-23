@@ -1,0 +1,13 @@
+@import '../../common/layout';
+@import '../../common/variables';
+@import '../../common//font';
+
+.slider {
+  width: 100vw;
+}
+
+.items {
+  width: auto;
+  @include flex-row(flex-start, center);
+  overflow-x: scroll;
+}

@@ -46,7 +46,7 @@ const HeaderCategories: CategoryType[] = [
 
 const Header = () => {
   const [isBurgerOpen, setIsBurgerOpen] = useState(false);
-  const [isHeaderOpen, setIsHeaderOpen] = useState(true);
+  const [isHeaderOpen, setIsHeaderOpen] = useState(false);
   const [focusName, setFocusName] = useState('');
   const [subFucusName, setSubFocusName] = useState('');
 

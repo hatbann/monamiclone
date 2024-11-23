@@ -107,8 +107,9 @@
   }
 
   .items {
-    width: 100%;
+    width: 100vw;
     height: 400px;
     background-color: white;
+    overflow-x: hidden;
   }
 }
